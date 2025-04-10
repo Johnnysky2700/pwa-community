@@ -4,8 +4,10 @@ module.exports = {
   darkMode: 'media', // or 'class'
   theme: {
     extend: {
-      fontFamily: {
-        sans: ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+      colors: {
+        primary: '#5A0FC8',
+        "secondary-100": "#E2E2D5",
+        "secondary-200": "#888883",
       },
     },
   },
