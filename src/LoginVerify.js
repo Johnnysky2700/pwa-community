@@ -1,73 +1,96 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import Pwalogo from './pwalogo.png';
+import { TbPlayerTrackNext } from "react-icons/tb";
+import { AiOutlinePhone } from "react-icons/ai";
+import { BiLogIn } from "react-icons/bi";
+import { MdVerifiedUser } from "react-icons/md";
 
 export default function LoginVerify() {
-  const [code, setCode] = useState(["", "", "", "", "", ""]);
+  const [code, setCode] = useState('');
+  const navigate = useNavigate();
 
-  const handleChange = (value, index) => {
-    if (/^[0-9]?$/.test(value)) {
-      const newCode = [...code];
-      newCode[index] = value;
-      setCode(newCode);
-
-      // Move to next input
-      if (value && index < 5) {
-        document.getElementById(`otp-${index + 1}`).focus();
-      }
+  const handleNextStep = () => {
+    if (code.trim() === '') {
+      alert('Please enter the verification code.');
+      return;
     }
+
+    // Simulate successful verification
+    alert(`Verification successful for code: ${code}`);
+    navigate('/HomePage'); // ✅ Redirect to home
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const otp = code.join("");
-    console.log("OTP submitted:", otp);
-    // Do your verification logic here
+  const goToLogin = () => {
+    navigate('/');
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100 dark:bg-gray-900">
-      <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-lg p-8 w-full max-w-md">
-        <h2 className="text-2xl font-bold mb-2 text-center text-gray-800 dark:text-white">
-          Verify Your Account
-        </h2>
-        <p className="text-sm text-gray-500 dark:text-gray-400 text-center mb-6">
-          Enter the 6-digit code we sent to your email or phone.
-        </p>
-
-        <form onSubmit={handleSubmit} className="space-y-6">
-          <div className="flex justify-between gap-2">
-            {code.map((digit, idx) => (
-              <input
-                key={idx}
-                id={`otp-${idx}`}
-                type="text"
-                inputMode="numeric"
-                maxLength="1"
-                value={digit}
-                onChange={(e) => handleChange(e.target.value, idx)}
-                className="w-12 h-12 text-center text-xl border border-gray-300 dark:border-gray-700 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-gray-700 dark:text-white"
-              />
-            ))}
-          </div>
-
-          <button
-            type="submit"
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white py-2 rounded-lg font-medium transition duration-200"
-          >
-            Verify
-          </button>
-
-          <div className="text-center text-sm text-gray-500 dark:text-gray-400">
-            Didn't get the code?{" "}
-            <button
-              type="button"
-              onClick={() => alert("Resend code clicked")}
-              className="text-blue-600 hover:underline"
-            >
-              Resend
-            </button>
-          </div>
-        </form>
+    <div className="bg-white min-h-screen flex flex-col items-center justify-center">
+      
+      {/* Logo */}
+      <div className="w-full mb-4">
+        <img
+          src={Pwalogo}
+          alt="PWA Logo"
+          className="object-contain w-full"
+        />
       </div>
+
+      {/* Heading */}
+      <h2 className="text-xl text-gray-800 mb-6 pt-4 text-center">
+      Log In To Your Account
+      </h2>
+
+      {/* Tabs */}
+      <div className="flex mb-6 text-xs">
+        <button
+          onClick={goToLogin}
+          className="px-4 py-2 text-gray-500 border-b-2 border-transparent hover:text-primary flex items-center justify-center gap-1"
+        >
+          <BiLogIn />
+          Login
+        </button>
+        <button className="px-4 py-2 text-primary border-b-2 border-primary flex items-center justify-center gap-1">
+          <MdVerifiedUser />
+          Verification
+        </button>
+      </div>
+
+      {/* Verification Input */}
+      <div className="text-left mb-4 w-full max-w-sm">
+        <label htmlFor="code" className="block text-sm text-gray-600 mb-1">
+          Verification
+        </label>
+        <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2 bg-white">
+          <AiOutlinePhone className="text-gray-400 mr-2" />
+          <input
+            id="code"
+            type="text"
+            placeholder="Enter Verification Code"
+            value={code}
+            onChange={(e) => setCode(e.target.value)}
+            className="w-full outline-none text-gray-700 placeholder:text-sm"
+          />
+        </div>
+      </div>
+
+      {/* Submit Button */}
+      <button
+        onClick={handleNextStep}
+        className="bg-primary text-white text-xs rounded-lg hover:bg-primary/80 transition flex items-center justify-center gap-1 py-2 px-4"
+      >
+        <BiLogIn />
+        <span>Login</span>
+      </button>
+
+      {/* Resend Code Link */}
+      <p className="mt-4 text-xs text-gray-600 py-8 text-center">
+        Did not receive code?{' '}
+        <a href="#" className="text-primary font-semibold hover:underline">
+          TryAgain
+        </a>
+      </p>
     </div>
   );
 }

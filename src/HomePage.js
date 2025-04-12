@@ -1,22 +1,23 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import Logo from './logo.png';
 
 const HomePage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-center px-4">
-      <h1 className="text-3xl font-bold mb-6">Welcome to PWA Community</h1>
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-center ">
+      <img src={Logo} alt="" />
       <div className="flex gap-4">
         <button
           onClick={() => navigate('/')}
-          className="bg-purple-600 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-700 transition"
+          className="bg-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary/20 transition"
         >
           Go to Login
         </button>
         <button
           onClick={() => navigate('/verify')}
-          className="bg-purple-500 text-white px-6 py-2 rounded-lg font-semibold hover:bg-purple-600 transition"
+          className="bg-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary/80 transition"
         >
           Go to Verification
         </button>

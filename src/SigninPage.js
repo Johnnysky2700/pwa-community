@@ -1,45 +1,38 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import Pwalogo from './pwalogo.png';
+import Profilepic from './profilepic.png';
 import { TbPlayerTrackNext } from "react-icons/tb";
 import { AiOutlinePhone } from "react-icons/ai";
 import { BiLogIn } from "react-icons/bi";
 import { MdVerifiedUser } from "react-icons/md";
 
-const LoginPage = () => {
+const SigninPage = () => {
   const [phone, setPhone] = useState('');
+  const [name, setName] = useState('');
   const navigate = useNavigate();
 
   const goToVerification = () => {
-    navigate('/LoginVerify');
-  };  
+    navigate('/SigninVerify');
+  };
 
   const handleNextStep = () => {
     if (phone.trim() === '') {
-      alert('Please enter your phone number.');
+      alert('Please enter your full name and phone number.');
       return;
     }
-    alert(`Next step for: ${phone}`);
-    navigate('/LoginVerify'); // ✅ Go to verification screen
+    alert(`Next step for: ${phone} (${name})`);
+    navigate('/SigninVerify');
   };
-  
 
   return (
     <div className="bg-white min-h-screen flex flex-col items-center justify-center">
-      
+
       {/* Logo */}
       <div className="w-full mb-4">
-        <img
-          src={Pwalogo}
-          alt="PWA Logo"
-          className="object-contain w-full"
-        />
+        <img src={Pwalogo} alt="PWA Logo" className="object-contain w-full" />
+        <img src={Profilepic} alt="Profile Pic" className="mx-auto mt-4 w-20 h-20 rounded-full" />
       </div>
-
-      {/* Heading */}
-      <h2 className="text-xl text-gray-800 mb-6 pt-4 text-center">
-        Log In To Your Account
-      </h2>
 
       {/* Tabs */}
       <div className="flex mb-6 text-xs">
@@ -55,6 +48,24 @@ const LoginPage = () => {
           Verification
         </button>
       </div>
+
+      {/* Full Name Input */}
+      <div className="text-left mb-6 w-full max-w-sm">
+        <label htmlFor="name" className="block text-sm text-gray-600 mb-1">
+          Full Name
+        </label>
+        <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2 bg-white">
+          <input
+            id="name"
+            type="text"
+            placeholder="Enter full name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full outline-none text-gray-700 placeholder:text-sm"
+          />
+        </div>
+      </div>
+
 
       {/* Phone Input */}
       <div className="text-left mb-4 w-full max-w-sm">
@@ -85,13 +96,13 @@ const LoginPage = () => {
 
       {/* Sign Up link */}
       <p className="mt-4 text-xs text-gray-600 py-8 text-center">
-        Don't have an account?{' '}
-        <Link to="/SigninPage" className="text-primary font-semibold hover:underline">
-        Sign up
-        </Link>
+        You Have Account?{' '}
+        <a href="#" className="text-primary font-semibold hover:underline">
+          Login
+        </a>
       </p>
     </div>
   );
 };
 
-export default LoginPage;
+export default SigninPage;
