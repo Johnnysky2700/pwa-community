@@ -6,6 +6,8 @@ import NotFound from './NotFound';
 import HomePage from './HomePage';
 import SigninVerify from './SigninVerify';
 import SigninPage from './SigninPage'
+import SplashScreen from './SplashScreen';
+import ChatList from './ChatList';
 
 const App = () => {
   return (
@@ -17,6 +19,8 @@ const App = () => {
         <Route path="*" element={<NotFound />} />
         <Route path="/SigninPage" element={<SigninPage />} />
         <Route path="/SigninVerify" element={<SigninVerify />} />
+        <Route path="/SplashScreen" element={<SplashScreen />} />
+        <Route path="/ChatList" element={<ChatList />} />
       </Routes>
     </Router>
   );

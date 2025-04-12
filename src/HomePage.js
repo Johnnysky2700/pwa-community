@@ -6,7 +6,7 @@ const HomePage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-center ">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-center px-4">
       <img src={Logo} alt="" />
       <div className="flex gap-4">
         <button

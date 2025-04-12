@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Pwalogo from './pwalogo.png';
-import { TbPlayerTrackNext } from "react-icons/tb";
 import { AiOutlinePhone } from "react-icons/ai";
 import { BiLogIn } from "react-icons/bi";
 import { MdVerifiedUser } from "react-icons/md";
@@ -15,11 +14,10 @@ export default function LoginVerify() {
       alert('Please enter the verification code.');
       return;
     }
-
-    // Simulate successful verification
+  
     alert(`Verification successful for code: ${code}`);
-    navigate('/HomePage'); // ✅ Redirect to home
-  };
+    navigate('/SplashScreen'); // 👈 now navigates to Flashscreen
+  };  
 
   const goToLogin = () => {
     navigate('/');

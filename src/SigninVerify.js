@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Pwalogo from './pwalogo.png';
-import { TbPlayerTrackNext } from "react-icons/tb";
 import { AiOutlinePhone } from "react-icons/ai";
 import { BiLogIn } from "react-icons/bi";
 import { MdVerifiedUser } from "react-icons/md";

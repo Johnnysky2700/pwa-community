@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import Pwalogo from './pwalogo.png';
 import Profilepic from './profilepic.png';
 import { TbPlayerTrackNext } from "react-icons/tb";
@@ -97,9 +97,9 @@ const SigninPage = () => {
       {/* Sign Up link */}
       <p className="mt-4 text-xs text-gray-600 py-8 text-center">
         You Have Account?{' '}
-        <a href="#" className="text-primary font-semibold hover:underline">
-          Login
-        </a>
+        <Link to="/LoginPage" className="text-primary font-semibold hover:underline">
+         Login
+        </Link>
       </p>
     </div>
   );
