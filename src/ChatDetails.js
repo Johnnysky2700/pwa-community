@@ -1,34 +1,38 @@
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import useFetch from './useFetch';
-import { useHistory } from 'react-router-dom';
 
 const ChatDetails = () => {
   const { id } = useParams();
-  const { data: blog, error, isPending } = useFetch('http://localhost:8000/blogs/' + id);
-  const history = useHistory
+  const { data: chat, error, isPending } = useFetch('http://localhost:8000/chats/' + id); 
+  const navigate = useNavigate();
 
-  const handleClick = () => {
-      fetch('http://localhost:8000/blogs/' + blog.id, {
-        method: 'DELETE'
-      }).then(() => {
-        history.push('/');
-      })
-  }
+  const handleDelete = () => {
+    fetch('http://localhost:8000/chats/' + id, {
+      method: 'DELETE',
+    }).then(() => {
+      navigate('/ChatList'); 
+    });
+  };
 
-    return ( 
-        <div className="blog-details">
-            { isPending && <div>Loading...</div> }
-            { error && <div>{ error }</div> }
-            { blog && (
-                <article>
-                    <h2>{ blog.title }</h2>
-                    <p>Written by { blog.author }</p>
-                    <div>{ blog.body }</div>
-                    <button onClick={handleClick}>delete</button>
-                </article>
-            )}
-        </div>
-     );
-}
- 
+  return (
+    <div className="chat-details">
+      {isPending && <div>Loading chat...</div>}
+      {error && <div>{error}</div>}
+      {chat && (
+        <article>
+          <h2>{chat.title}</h2>
+          <p>Sent by: {chat.author}</p>
+          <div>{chat.body}</div>
+          <button
+            onClick={handleDelete}
+            className="mt-4 bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
+          >
+            Delete Chat
+          </button>
+        </article>
+      )}
+    </div>
+  );
+};
+
 export default ChatDetails;

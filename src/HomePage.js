@@ -1,27 +1,34 @@
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import Logo from './logo.png';
+import React, { useState, useEffect } from 'react';
+import ChatList from './ChatList';
 
 const HomePage = () => {
-  const navigate = useNavigate();
+  const [chats, setChats] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    fetch('http://localhost:8000/chats')
+      .then((res) => {
+        if (!res.ok) {
+          throw Error('Could not fetch the chats');
+        }
+        return res.json();
+      })
+      .then((data) => {
+        setChats(data);
+        setIsLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setIsLoading(false);
+      });
+  }, []);
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100 text-center px-4">
-      <img src={Logo} alt="" />
-      <div className="flex gap-4">
-        <button
-          onClick={() => navigate('/')}
-          className="bg-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary/20 transition"
-        >
-          Go to Login
-        </button>
-        <button
-          onClick={() => navigate('/verify')}
-          className="bg-primary text-white px-6 py-2 rounded-lg font-semibold hover:bg-primary/80 transition"
-        >
-          Go to Verification
-        </button>
-      </div>
+    <div>
+      {isLoading && <p>Loading chats...</p>}
+      {error && <p>{error}</p>}
+      <ChatList blogs={chats} />
     </div>
   );
 };
