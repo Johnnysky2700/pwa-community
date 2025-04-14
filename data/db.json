@@ -1,148 +1,173 @@
 {
-    "chats": [
-      {
-        "id": 1,
-        "name": "Michael Tony",
-        "phone": "+43 123-456-7890",
-        "avatar": "michael.png",
-        "messages": [
-          {
-            "id": 1,
-            "text": "Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore.",
-            "timestamp": "2025-04-12T10:00:00Z",
-            "sender": "receiver"
-          },
-          {
-            "id": 2,
-            "text": "Sed Do Eiusmod Tempor Incididunt Ut Labore Et Magna Aliqua. Ut Enim Ad Minim Veniam.",
-            "timestamp": "2025-04-12T10:01:00Z",
-            "sender": "sender"
-          },
-          {
-            "id": 3,
-            "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-            "timestamp": "2025-04-12T10:02:00Z",
-            "sender": "receiver"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Joseph Ray",
-        "phone": "+43 987-654-3210",
-        "avatar": "joseph.png",
-        "messages": [
-          {
-            "id": 1,
-            "text": "Hey, how's everything going?",
-            "timestamp": "2025-04-12T09:00:00Z",
-            "sender": "sender"
-          }
-        ]
-      },
-      {
-        "id": 3,
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-        "name": "Thomas Adison",
-        "phone": "+43 111-222-3333",
-        "avatar": "thomas.png",
-        "messages": [
-          {
-            "id": 1,
-            "text": "Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore.",
-            "timestamp": "2025-04-12T10:00:00Z",
-            "sender": "receiver"
-          },
-          {
-            "id": 2,
-            "text": "Sed Do Eiusmod Tempor Incididunt Ut Labore Et Magna Aliqua. Ut Enim Ad Minim Veniam.",
-            "timestamp": "2025-04-12T10:01:00Z",
-            "sender": "sender"
-          }
-        ]
-      },
-      {
-        "id": 4,
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-        "name": "Jira",
-        "phone": "+43 444-555-6666",
-        "avatar": "jira.png",
-        "messages": [
-          {
-            "id": 1,
-            "text": "Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore.",
-            "timestamp": "2025-04-12T10:00:00Z",
-            "sender": "receiver"
-          },
-          {
-            "id": 2,
-            "text": "Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore",
-            "timestamp": "2025-04-12T10:01:00Z",
-            "sender": "sender"
-          }
-        ]
-      },
-      {
-        "id": 5,
-        "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
-        "name": "Metal Exchange",
-        "phone": "+43 000-000-0000",
-        "avatar": "thomas.png",
-        "messages": [
-          {
-            "id": 1,
-            "text": "Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore.",
-            "timestamp": "2025-04-12T10:00:00Z",
-            "sender": "receiver"
-          },
-          {
-            "id": 2,
-            "text": "Sed Do Eiusmod Tempor Incididunt Ut Labore Et Magna Aliqua. Ut Enim Ad Minim Veniam.",
-            "timestamp": "2025-04-12T10:01:00Z",
-            "sender": "sender"
-          }
-        ]
-      },
-      {
-        "id": 6,
-        "name": "Michael Tony",
-        "phone": "+43 123-456-7890",
-        "avatar": "michael.png",
-        "messages": [
-          {
-            "id": 1,
-            "text": "Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore.",
-            "timestamp": "2025-04-12T10:00:00Z",
-            "sender": "receiver"
-          },
-          {
-            "id": 2,
-            "text": "Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore.",
-            "timestamp": "2025-04-12T10:01:00Z",
-            "sender": "sender"
-          }
-        ]
-      },
-      {
-        "id": 2,
-        "name": "Joseph Ray",
-        "phone": "+43 987-654-3210",
-        "avatar": "joseph.png",
-        "messages": [
-          {
-            "id": 1,
-            "text": "Hey, how's everything going?",
-            "timestamp": "2025-04-12T09:00:00Z",
-            "sender": "sender"
-          },
-          {
-            "id": 2,
-            "text": "Sed Do Eiusmod Tempor Incididunt Ut Labore Et Magna Aliqua. Ut Enim Ad Minim Veniam.",
-            "timestamp": "2025-04-12T10:01:00Z",
-            "sender": "sender"
-          }
-        ]
-      }
-    ]
-  }
-  
+  "chats": [
+    {
+      "id": "1",
+      "name": "Michael Tony",
+      "phone": "+43 123-456-7890",
+      "avatar": "michael.png",
+      "messages": [
+        {
+          "id": 1,
+          "text": "Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore.",
+          "timestamp": "2025-04-12T10:00:00Z",
+          "sender": "receiver"
+        },
+        {
+          "id": 2,
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore.",
+          "timestamp": "2025-04-12T10:01:00Z",
+          "sender": "sender",
+          "avatar": "jira.png"
+        },
+        {
+          "id": 3,
+          "text": "sed do eiusmod tempor incididunt ut labore et magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliqui.",
+          "timestamp": "2025-04-12T10:02:00Z",
+          "sender": "receiver"
+        },
+        {
+          "id": 2,
+          "text": "Sed Do Eiusmod Tempor Incididunt Ut Labore Et Magna Aliqua. Ut Enim Ad Minim Veniam.",
+          "timestamp": "2025-04-12T10:01:00Z",
+          "sender": "sender",
+          "avatar": "jira.png"
+        },
+        {
+          "id": 3,
+          "text": "sed do eiusmod tempor incididunt ut labore et magna aliqua. Ut enim ad minim veniam",
+          "timestamp": "2025-04-12T10:02:00Z",
+          "sender": "receiver"
+        },
+        {
+          "id": 2,
+          "text": "Lorem ipsum dolor sit amet, consectetur adipiscing",
+          "timestamp": "2025-04-12T10:01:00Z",
+          "sender": "sender",
+          "avatar": "jira.png"
+        },
+        {
+          "id": 3,
+          "text": "sed do eiusmod tempor incididunt ut labore et ",
+          "timestamp": "2025-04-12T10:02:00Z",
+          "sender": "receiver"
+        },
+        {
+          "id": 2,
+          "text": "ok",
+          "timestamp": "2025-04-12T10:01:00Z",
+          "sender": "sender",
+          "avatar": "jira.png"
+        }
+      ]
+    },
+    {
+      "id": "2",
+      "name": "Joseph Ray",
+      "phone": "+43 987-654-3210",
+      "avatar": "joseph.png",
+      "messages": [
+        {
+          "id": 1,
+          "text": "Hey, how's everything going?",
+          "timestamp": "2025-04-12T09:00:00Z",
+          "sender": "sender",
+          "avatar": "you.png"
+        },
+        {
+          "id": 2,
+          "text": "Sed Do Eiusmod Tempor Incididunt Ut Labore Et Magna Aliqua. Ut Enim Ad Minim Veniam.",
+          "timestamp": "2025-04-12T10:01:00Z",
+          "sender": "sender",
+          "avatar": "you.png"
+        }
+      ]
+    },
+    {
+      "id": "3",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+      "name": "Thomas Adison",
+      "phone": "+43 111-222-3333",
+      "avatar": "thomas.png",
+      "messages": [
+        {
+          "id": 1,
+          "text": "Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore.",
+          "timestamp": "2025-04-12T10:00:00Z",
+          "sender": "receiver"
+        },
+        {
+          "id": 2,
+          "text": "Sed Do Eiusmod Tempor Incididunt Ut Labore Et Magna Aliqua. Ut Enim Ad Minim Veniam.",
+          "timestamp": "2025-04-12T10:01:00Z",
+          "sender": "sender",
+          "avatar": "you.png"
+        }
+      ]
+    },
+    {
+      "id": "4",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+      "name": "Jira",
+      "phone": "+43 444-555-6666",
+      "avatar": "jira.png",
+      "messages": [
+        {
+          "id": 1,
+          "text": "Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore.",
+          "timestamp": "2025-04-12T10:00:00Z",
+          "sender": "receiver"
+        },
+        {
+          "id": 2,
+          "text": "Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore",
+          "timestamp": "2025-04-12T10:01:00Z",
+          "sender": "sender",
+          "avatar": "you.png"
+        }
+      ]
+    },
+    {
+      "id": "5",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit,",
+      "name": "Metal Exchange",
+      "phone": "+43 000-000-0000",
+      "avatar": "thomas.png",
+      "messages": [
+        {
+          "id": 1,
+          "text": "Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore.",
+          "timestamp": "2025-04-12T10:00:00Z",
+          "sender": "receiver"
+        },
+        {
+          "id": 2,
+          "text": "Sed Do Eiusmod Tempor Incididunt Ut Labore Et Magna Aliqua. Ut Enim Ad Minim Veniam.",
+          "timestamp": "2025-04-12T10:01:00Z",
+          "sender": "sender",
+          "avatar": "you.png"
+        }
+      ]
+    },
+    {
+      "id": "6",
+      "name": "Michael Tony",
+      "phone": "+43 123-456-7890",
+      "avatar": "michael.png",
+      "messages": [
+        {
+          "id": 1,
+          "text": "Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore.",
+          "timestamp": "2025-04-12T10:00:00Z",
+          "sender": "receiver"
+        },
+        {
+          "id": 2,
+          "text": "Lorem Ipsum Dolor Sit Amet, Consectetur Adipisicing Elit, Sed Do Eiusmod Tempor Incididunt Ut Labore Et Dolore.",
+          "timestamp": "2025-04-12T10:01:00Z",
+          "sender": "sender",
+          "avatar": "you.png"
+        }
+      ]
+    }
+  ]
+}
