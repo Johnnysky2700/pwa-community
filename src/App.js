@@ -9,6 +9,7 @@ import SigninPage from './SigninPage';
 import SplashScreen from './SplashScreen';
 import ChatList from './ChatList';
 import ChatDetails from './ChatDetails';
+import AddContact from './AddContact';
 
 // Create context to share chat data
 export const ChatContext = createContext();
@@ -43,6 +44,7 @@ const App = () => {
           <Route path="/ChatList" element={<ChatList />} />
           <Route path="/chats/:id" element={<ChatDetails />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="AddContact" element={<AddContact />} />
         </Routes>
       </Router>
     </ChatContext.Provider>

@@ -1,4 +1,4 @@
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useEffect, useState } from 'react';
 import useFetch from './useFetch';
 import ChatImages from './ChatImages';
@@ -58,30 +58,30 @@ const ChatDetails = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div className="min-h-screen bg-primary rounded-t-3xl flex flex-col">
       {isPending && <div className="text-center mt-10">Loading chat...</div>}
       {error && <div className="text-center mt-10 text-red-500">{error}</div>}
       {chat && (
         <>
           {/* Header */}
-          <div className="bg-primary text-white px-6 py-4 flex items-center justify-between rounded-2xl">
-            {/* Left side: Back button and chat info */}
+          <div className="text-white px-6 py-4 rounded-t-3xl flex items-center justify-between">
             <div className="flex items-center gap-4">
-              <IoArrowBack className="text-2xl cursor-pointer" />
+              <IoArrowBack className="text-2xl cursor-pointer" onClick={() => navigate('/ChatList')} />
               <div>
-              <h2 className="text-xl font-bold">{chat.name}</h2>
-              <p className="text-sm">{chat.phone || '+123 456 7890'}</p>
+                <h2 className="text-lg font-bold">{chat.name}</h2>
+                <p className="text-sm opacity-80">{chat.phone || '+123 456 7890'}</p>
               </div>
             </div>
-
-            {/* Right side: Notification and options */}
             <div className="flex items-center gap-4">
               <MdNotificationsActive className="text-2xl cursor-pointer" />
+              <Link to="/AddContact"> {/* Wrap PiDots icon in Link component */}
               <PiDotsThreeVerticalBold className="text-2xl cursor-pointer" />
+              </Link>
             </div>
           </div>
+
           {/* Messages */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4">
+          <div className="flex-1 rounded-t-3xl bg-[#FFFFFF] overflow-y-auto p-4 space-y-4">
             {chat.messages.map((message, index) => {
               const isSender = message.sender === 'sender';
               const avatar = message.avatar || chat.avatar;
@@ -89,25 +89,21 @@ const ChatDetails = () => {
               return (
                 <div
                   key={index}
-                  className={`flex items-end ${isSender ? 'justify-end' : 'justify-start'}`}
+                  className={`flex items-end ${isSender ? 'justify-end' : 'justify-start'} gap-2`}
                 >
                   {!isSender && (
                     <img
                       src={ChatImages[avatar] || ChatImages['default.png']}
                       alt="avatar"
-                      className="w-8 h-8 rounded-full mr-2"
+                      className="w-9 h-9 rounded-full"
                     />
                   )}
 
                   <div
-                    className={`max-w-xs p-3 rounded-xl ${
-                      isSender
-                        ? 'bg-purple-500 text-white rounded-br-none'
-                        : 'bg-purple-200 text-black rounded-bl-none'
-                    }`}
+                    className={`max-w-sm px-5 py-3 ${isSender ? 'bg-purple-500 text-white' : 'bg-purple-200 text-black'} rounded-[20px]`}
                   >
                     <p className="text-sm">{message.text}</p>
-                    <p className="text-[10px] text-right mt-1">
+                    <p className="text-[10px] text-right mt-1 opacity-70">
                       {new Date(message.timestamp).toLocaleTimeString([], {
                         hour: '2-digit',
                         minute: '2-digit',
@@ -119,42 +115,31 @@ const ChatDetails = () => {
                     <img
                       src={ChatImages[avatar] || ChatImages['default.png']}
                       alt="avatar"
-                      className="w-8 h-8 rounded-full ml-2"
+                      className="w-9 h-9 rounded-full"
                     />
                   )}
                 </div>
               );
             })}
-          </div>
-
-          {/* Input area */}
-          <div className="p-4 bg-white flex items-center gap-2 shadow-inner rounded-t-2xl">
-            <button className="text-gray-500 text-xl"><FaRegSmile /></button>
-            <input
-              type="text"
-              placeholder="Type message here..."
-              value={newMessage}
-              onChange={(e) => setNewMessage(e.target.value)}
-              onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-              className="flex-1 outline-none bg-gray-100 p-2 rounded-full text-sm"
-            />
-            <button
-              onClick={handleSend}
-              className="bg-primary text-white p-2 rounded-full hover:bg-purple-600"
-            >
-            <BsSend />
-            </button>
-          {/* </div>
-
-          {/* Optional delete
-          <div className="text-center mt-4">
-            <button
-              onClick={handleDelete}
-              className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
-            >
-              Delete Chat
-            </button> */}
-          </div>
+              {/* Input area */}
+            <div className="p-4 bg-white flex items-center gap-3 rounded-t-3xl shadow-inner">
+              <button className="text-gray-500 text-xl"><FaRegSmile /></button>
+                <input
+                  type="text"
+                  placeholder="Type message here..."
+                  value={newMessage}
+                  onChange={(e) => setNewMessage(e.target.value)}
+                  onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+                  className="flex-1 outline-none bg-gray-100 p-3 rounded-full text-sm"
+                />
+              <button
+                onClick={handleSend}
+                className="bg-primary text-white p-3 rounded-full hover:bg-purple-600"
+              >
+              <BsSend className="text-lg" />
+              </button>
+            </div>
+          </div>          
         </>
       )}
     </div>
