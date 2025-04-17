@@ -12,7 +12,7 @@ const LoginPage = () => {
 
   const goToVerification = () => {
     navigate('/LoginVerify');
-  };  
+  };
 
   const handleNextStep = () => {
     if (phone.trim() === '') {
@@ -20,9 +20,8 @@ const LoginPage = () => {
       return;
     }
     alert(`Next step for: ${phone}`);
-    navigate('/LoginVerify'); // ✅ Go to verification screen
+    navigate('/LoginVerify');
   };
-  
 
   return (
     <div className="bg-white min-h-screen flex flex-col items-center justify-center">
@@ -55,24 +54,24 @@ const LoginPage = () => {
           Verification
         </button>
       </div>
+{/* Phone Input */}
+<div className="w-full max-w-sm mb-6">
+  <label className="block text-gray-700 text-sm font-medium mb-2">Phone Number</label>
+  <div className="relative">
+    <input
+      type="tel"
+      id="phone"
+      placeholder="+43 123-456-7890"
+      value={phone}
+      onChange={(e) => setPhone(e.target.value)}
+      className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-md text-sm text-gray-700 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+    />
+    <div className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 text-xl">
+      <AiOutlinePhone />
+    </div>
+  </div>
+</div>
 
-      {/* Phone Input */}
-      <div className="text-left mb-4 w-full max-w-sm">
-        <label htmlFor="phone" className="block text-sm text-gray-600 mb-1">
-          Phone Number
-        </label>
-        <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2 bg-white">
-          <AiOutlinePhone className="text-gray-400 mr-2" />
-          <input
-            id="phone"
-            type="tel"
-            placeholder="+43 123-456-7890"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-            className="w-full outline-none text-gray-700 placeholder:text-sm"
-          />
-        </div>
-      </div>
 
       {/* Button */}
       <button
@@ -87,7 +86,7 @@ const LoginPage = () => {
       <p className="mt-4 text-xs text-gray-600 py-8 text-center">
         Don't have an account?{' '}
         <Link to="/SigninPage" className="text-primary font-semibold hover:underline">
-        Sign up
+          Sign up
         </Link>
       </p>
     </div>
