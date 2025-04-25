@@ -7,6 +7,7 @@ import { FaRegSmile } from "react-icons/fa";
 import { MdNotificationsActive } from "react-icons/md";
 import { PiDotsThreeVerticalBold } from "react-icons/pi";
 import { IoArrowBack } from "react-icons/io5";
+import YouAvatar from './ChatsImg/you.png'; // ✅ Corrected path to avatar
 
 const ChatDetails = () => {
   const { id } = useParams();
@@ -29,7 +30,7 @@ const ChatDetails = () => {
       sender: 'sender',
       text: newMessage,
       timestamp: new Date().toISOString(),
-      avatar: 'you.png'
+      avatar: 'you.png' // ✅ Matches key in ChatImages
     };
 
     const updatedChat = {
@@ -58,7 +59,7 @@ const ChatDetails = () => {
   };
 
   return (
-    <div className="min-h-screen bg-primary rounded-t-3xl flex flex-col">
+    <div className="min-h-screen bg-primary rounded-t-3xl flex flex-col border border-green-600">
       {isPending && <div className="text-center mt-10">Loading chat...</div>}
       {error && <div className="text-center mt-10 text-red-500">{error}</div>}
       {chat && (
@@ -74,14 +75,14 @@ const ChatDetails = () => {
             </div>
             <div className="flex items-center gap-4">
               <MdNotificationsActive className="text-2xl cursor-pointer" />
-              <Link to="/AddContact"> {/* Wrap PiDots icon in Link component */}
-              <PiDotsThreeVerticalBold className="text-2xl cursor-pointer" />
+              <Link to="/AddContact">
+                <PiDotsThreeVerticalBold className="text-2xl cursor-pointer" />
               </Link>
             </div>
           </div>
 
           {/* Messages */}
-          <div className="flex-1 rounded-t-3xl bg-[#FFFFFF] overflow-y-auto p-4 space-y-4">
+          <div className="flex-1 rounded-t-3xl bg-[#FFFFFF] overflow-y-auto p-4 space-y-4 pb-28">
             {chat.messages.map((message, index) => {
               const isSender = message.sender === 'sender';
               const avatar = message.avatar || chat.avatar;
@@ -113,7 +114,7 @@ const ChatDetails = () => {
 
                   {isSender && (
                     <img
-                      src={ChatImages[avatar] || ChatImages['default.png']}
+                      src={ChatImages[avatar] || YouAvatar} // ✅ Use imported fallback if not found
                       alt="avatar"
                       className="w-9 h-9 rounded-full"
                     />
@@ -121,25 +122,26 @@ const ChatDetails = () => {
                 </div>
               );
             })}
-              {/* Input area */}
-            <div className="p-4 bg-white flex items-center gap-3 rounded-t-3xl shadow-inner">
+
+            {/* Input area */}
+            <div className="p-4 bg-white flex items-center gap-3 rounded-t-3xl shadow-inner fixed bottom-0 left-0 w-full">
               <button className="text-gray-500 text-xl"><FaRegSmile /></button>
-                <input
-                  type="text"
-                  placeholder="Type message here..."
-                  value={newMessage}
-                  onChange={(e) => setNewMessage(e.target.value)}
-                  onKeyDown={(e) => e.key === 'Enter' && handleSend()}
-                  className="flex-1 outline-none bg-gray-100 p-3 rounded-full text-sm"
-                />
+              <input
+                type="text"
+                placeholder="Type message here..."
+                value={newMessage}
+                onChange={(e) => setNewMessage(e.target.value)}
+                onKeyDown={(e) => e.key === 'Enter' && handleSend()}
+                className="flex-1 outline-none bg-gray-100 p-3 rounded-full text-sm"
+              />
               <button
                 onClick={handleSend}
                 className="bg-primary text-white p-3 rounded-full hover:bg-purple-600"
               >
-              <BsSend className="text-lg" />
+                <BsSend className="text-lg" />
               </button>
             </div>
-          </div>          
+          </div>
         </>
       )}
     </div>

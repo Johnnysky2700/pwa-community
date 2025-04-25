@@ -19,6 +19,34 @@
           "timestamp": "2025-04-12T10:01:00Z",
           "sender": "sender",
           "avatar": "joseph.png"
+        },
+        {
+          "id": 1745569583441,
+          "sender": "sender",
+          "text": ".nknnlnmm.,nklm,.",
+          "timestamp": "2025-04-25T08:26:23.441Z",
+          "avatar": "joseph.png"
+        },
+        {
+          "id": 1745581328105,
+          "sender": "sender",
+          "text": "hello",
+          "timestamp": "2025-04-25T11:42:08.105Z",
+          "avatar": "joseph.png"
+        },
+        {
+          "id": 1745581455579,
+          "sender": "sender",
+          "text": "hru doing",
+          "timestamp": "2025-04-25T11:44:15.579Z",
+          "avatar": "avatar"
+        },
+        {
+          "id": 1745582402534,
+          "sender": "sender",
+          "text": "hello",
+          "timestamp": "2025-04-25T12:00:02.534Z",
+          "avatar": "you.png"
         }
       ]
     },

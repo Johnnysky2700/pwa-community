@@ -17,7 +17,7 @@ const ChatList = () => {
   return (
     <div className="min-h-screen text-white">
       {/* Header */}
-      <div className="bg-primary text-white rounded-2xl rounded-b-3xl p-4 mb-6">
+      <div className="bg-primary text-white rounded-2xl rounded-b-3xl p-4 mb-6 fixed top-0 left-0 w-full">
         <h1 className="text-lg font-bold mb-4">PROGRESSIVE WEB APP</h1>
         <div className="flex items-center bg-white rounded-full px-4 py-2">
           <input
@@ -34,7 +34,7 @@ const ChatList = () => {
       </div>
 
       {/* Chat List */}
-      <div className="space-y-1 bg-purple-500">
+      <div className="space-y-1 bg-purple-500 mt-32">
         {filteredChats.length > 0 ? (
           filteredChats.map(chat => {
             console.log("CHAT NAME:", chat.name); // DEBUG LOG

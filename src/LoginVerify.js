@@ -46,7 +46,10 @@ export default function LoginVerify() {
           onClick={goToLogin}
           className="px-4 py-2 text-gray-500 border-b-2 border-transparent hover:text-primary flex items-center justify-center gap-1"
         >
-          <BiLogIn />
+         <div className="text-2xl border border-red-600">
+         <BiLogIn  
+         />
+          </div>
           Login
         </button>
         <button className="px-4 py-2 text-primary border-b-2 border-primary flex items-center justify-center gap-1">
