@@ -49,15 +49,7 @@ const ChatDetails = () => {
       body: JSON.stringify({ messages: updatedChat.messages }),
     });
   };
-
-  const handleDelete = () => {
-    fetch('http://localhost:8000/chats/' + id, {
-      method: 'DELETE',
-    }).then(() => {
-      navigate('/ChatList');
-    });
-  };
-
+  
   return (
     <div className="min-h-screen bg-primary rounded-t-3xl flex flex-col border border-green-600">
       {isPending && <div className="text-center mt-10">Loading chat...</div>}
