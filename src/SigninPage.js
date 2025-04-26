@@ -57,7 +57,7 @@ const SigninPage = () => {
       </div>
 
       {/* Full Name Input */}
-      <div className="text-left mb-6 w-full max-w-sm relative">
+      <div className="text-left mb-6 w-full max-w-sm relative pt-4">
         <div className="relative">
           {/* Floating Label */}
           <label
@@ -82,7 +82,7 @@ const SigninPage = () => {
       </div>
 
       {/* Phone Input */}
-      <div className="text-left mb-4 w-full max-w-sm relative">
+      <div className="text-left mb-4 w-full max-w-sm relative pb-4">
         <div className="relative">
           {/* Floating Label */}
           <label
