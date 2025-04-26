@@ -37,14 +37,14 @@ const App = () => {
         <Routes>
           <Route path="/" element={<LoginPage />} />
           <Route path="/LoginVerify" element={<LoginVerify />} />
-          <Route path="/HomwPage" element={<HomePage />} />
+          <Route path="/HomePage" element={<HomePage />} />
           <Route path="/SigninPage" element={<SigninPage />} />
           <Route path="/SigninVerify" element={<SigninVerify />} />
           <Route path="/SplashScreen" element={<SplashScreen />} />
           <Route path="/ChatList" element={<ChatList />} />
           <Route path="/chats/:id" element={<ChatDetails />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="AddContact" element={<AddContact />} />
+          <Route path="/AddContact" element={<AddContact />} />
         </Routes>
       </Router>
     </ChatContext.Provider>

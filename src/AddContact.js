@@ -83,12 +83,12 @@ const AddContact = () => {
             />
           </div>
         </div>
-       <div className="text-center text-sm">
-         <button
-          onClick={handleAddPhone}
-          className="mt-6 px-6 py-2 rounded-full border-2 border-primary text-primary text-center gap-2 hover:bg-purple-100"
+        <div className="text-center text-sm">
+          <button
+            onClick={handleAddPhone}
+            className="mt-6 px-6 py-2 rounded-full border-2 border-primary text-primary text-center gap-2 hover:bg-purple-100"
           >
-          + Add Contacts
+            + Add Contacts
           </button>
         </div>
       </div>
