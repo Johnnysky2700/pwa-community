@@ -47,6 +47,13 @@
           "text": "hello",
           "timestamp": "2025-04-25T12:00:02.534Z",
           "avatar": "you.png"
+        },
+        {
+          "id": 1745596695857,
+          "sender": "sender",
+          "text": "how are you",
+          "timestamp": "2025-04-25T15:58:15.857Z",
+          "avatar": "you.png"
         }
       ]
     },
